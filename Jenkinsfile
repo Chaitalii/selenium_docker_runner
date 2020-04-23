@@ -1,6 +1,11 @@
 pipeline{
 	agent any
 	stages{
+               stage("Pull Latest Image"){
+			steps{
+				sh "docker pull chaitali2019/autpprac"
+			}
+		}
 		
 		stage("Start Grid"){
 			steps{
