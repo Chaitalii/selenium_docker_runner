@@ -12,11 +12,7 @@ pipeline{
                                 sh "docker-compose up test1 test2"
                         }
                 }
-                stage("Stop  Grid"){
-                        steps{
-                                sh "docker-compose down"
-                        }
-                }
+                
 		
 	}
 	post{
