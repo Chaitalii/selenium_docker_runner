@@ -3,7 +3,7 @@ pipeline{
 	stages{
                stage("Pull Latest Image"){
 			steps{
-				sh "docker pull chaitali2019/autpprac"
+				sh "docker pull chaitali2019/autoprac"
 			}
 		}
 		
