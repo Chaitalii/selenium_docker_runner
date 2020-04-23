@@ -28,6 +28,9 @@ services:
     environment:
       - HUB_HOST=hub
       - BROWSER=firefox
+    volumes:
+      - ./output/test1:/usr/share/code/test-output
+
   test2:
     image: chaitali2019/autoprac
     depends_on:
@@ -36,4 +39,6 @@ services:
     environment:
       - HUB_HOST=hub
       - BROWSER=chrome
+    volumes:
+      - ./output/test1:/usr/share/code/test-output
 
