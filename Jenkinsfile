@@ -1,16 +1,17 @@
 pipeline{
 	agent any
 	stages{
-		stage("Pull Latest Image"){
-			steps{
-				sh "docker pull chaitali2019/autoprac"
-			}
-		}
+		
 		stage("Start Grid"){
 			steps{
-				sh "docker-compose up"
+				sh "docker-compose up -d --no-colors"
 			}
 		}
+                stage("Stop  Grid"){
+                        steps{
+                                sh "docker-compose down"
+                        }
+                }
 		
 	}
 	post{
