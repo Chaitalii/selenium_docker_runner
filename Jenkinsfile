@@ -4,7 +4,7 @@ pipeline{
 		
 		stage("Start Grid"){
 			steps{
-				sh "docker-compose up -d --no-colors"
+				sh "docker-compose up -d"
 			}
 		}
                 stage("Stop  Grid"){
