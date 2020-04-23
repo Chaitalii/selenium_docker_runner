@@ -3,19 +3,15 @@ pipeline{
 	stages{
 		stage("Pull Latest Image"){
 			steps{
-				sh "docker pull vinsdocker/selenium-docker"
+				sh "docker pull chaitali2019/autoprac"
 			}
 		}
 		stage("Start Grid"){
 			steps{
-				sh "docker-compose up -d hub chrome firefox"
+				sh "docker-compose up"
 			}
 		}
-		stage("Run Test"){
-			steps{
-				sh "docker-compose up search-module book-flight-module"
-			}
-		}
+		
 	}
 	post{
 		always{
