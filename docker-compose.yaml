@@ -40,5 +40,5 @@ services:
       - HUB_HOST=hub
       - BROWSER=chrome
     volumes:
-      - ./output/test1:/usr/share/code/test-output
+      - ./output/test2:/usr/share/code/test-output
 
