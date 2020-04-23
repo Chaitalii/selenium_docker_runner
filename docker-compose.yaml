@@ -1,0 +1,39 @@
+on: "3"
+services:
+  hub:
+    image: selenium/hub:latest
+    ports:
+      - "4444:4444"
+    environment:
+      - GRID_BROWSER_TIMEOUT=36000
+      - GRID_TIMEOUT=30
+  chrome:
+    image: selenium/node-chrome:latest
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+  firefox:
+    image: selenium/node-firefox:latest
+    shm_size: '1gb'
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+  test1:
+    image: chaitali2019/autoprac
+    depends_on: 
+      - chrome
+      - firefox
+    environment:
+      - HUB_HOST=hub
+      - BROWSER=firefox
+  test2:
+    image: chaitali2019/autoprac
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - HUB_HOST=hub
+      - BROWSER=chrome
+
